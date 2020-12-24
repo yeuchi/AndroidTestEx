@@ -1,8 +1,10 @@
 package com.ctyeung.mockkex
 
 import android.location.Address
+import io.mockk.confirmVerified
 import io.mockk.every
 import io.mockk.mockk
+import io.mockk.verify
 import junit.framework.Assert.assertEquals
 import org.junit.Before
 import org.junit.Test
@@ -17,19 +19,9 @@ import org.junit.Test
  */
 class BasicTest {
 
-//    @MockK
-//    private lateinit var addressMock: Address
-//    @MockK
-//    private lateinit var contactMock: Contact
-//    @InjectMockks
-//    val user: User = User()
-
-//    @Before
-//    fun setUp() = MockkAnnotations.init(this, relaxUnitFun = true)
-
     @Test
     fun testBasic() {
-        val address = mockk<com.ctyeung.mockkex.Address>("address")
+        val address = mockk<com.ctyeung.mockkex.Address>()
         val user = mockk<User>()
         val contact = mockk<Contact>()
 
@@ -46,5 +38,17 @@ class BasicTest {
 
         assertEquals("123-123-1234", user.phone)
         assertEquals("1 Sepulvuda Lane", address.street)
+    }
+
+    @Test
+    fun testVerify() {
+        val address1 = mockk<com.ctyeung.mockkex.Address>()
+        val address2 = mockk<com.ctyeung.mockkex.Address>()
+        every { address1.distance(address2) } returns 1
+
+        val dis = address1.distance(address2)
+
+        // verify it was called
+        verify{address1.distance(address2)}
     }
 }
