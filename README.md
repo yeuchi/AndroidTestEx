@@ -15,7 +15,7 @@ SpyTest.kt
 - spy: execute real method 
 
 SingletonTest.kt
-- mockObject: mock singleton 
+- mockObject: mock singleton, enum
 
 
 
