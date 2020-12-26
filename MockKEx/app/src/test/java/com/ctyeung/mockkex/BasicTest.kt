@@ -50,5 +50,8 @@ class BasicTest {
 
         // verify it was called
         verify{address1.distance(address2)}
+
+        // make sure all calls covered by verify
+        confirmVerified(address1)
     }
 }
