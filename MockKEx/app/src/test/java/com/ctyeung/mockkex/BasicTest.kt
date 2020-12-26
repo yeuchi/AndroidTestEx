@@ -49,7 +49,7 @@ class BasicTest {
         val dis = address1.distance(address2)
 
         // verify it was called
-        verify{address1.distance(address2)}
+        verify(exactly = 1) {address1.distance(address2)}
 
         // make sure all calls covered by verify
         confirmVerified(address1)
