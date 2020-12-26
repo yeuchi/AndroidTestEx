@@ -5,7 +5,18 @@ Some exercises of unit testing for Android.
 
 ### MockK
 
-Basics : mockK<>(), every{} returns, verify(), spy
+BasicTest.kt
+- mockK<>(): inflate a mock variable
+- every{} returns: stub method, variable and return value 
+- verify(): check a function was called 
+- confirmVerify(): check verify was called 
+
+SpyTest.kt
+- spy: execute real method 
+
+SingletonTest.kt
+- mockObjec: mock singleton 
+
 
 
 # References
