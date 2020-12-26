@@ -1,5 +1,7 @@
 package com.ctyeung.mockkex
 
+import io.mockk.mockkObject
+import io.mockk.unmockkAll
 import io.mockk.unmockkObject
 import org.junit.Assert.assertEquals
 import org.junit.Test
@@ -14,8 +16,9 @@ class testSingleton {
 
     @Test
     fun testMockObj() {
-        unmockkObject(Singleton)
+        mockkObject(Singleton)
         val sum = Singleton.add(2,2)
         assertEquals(4, sum)
+        unmockkAll()
     }
 }
