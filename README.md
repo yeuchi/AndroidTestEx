@@ -5,7 +5,7 @@ Some exercises of unit testing for Android.
 
 ### MockK
 
-Basics : mockK<>(), every{} returns, verify()
+Basics : mockK<>(), every{} returns, verify(), spy
 
 
 # References
