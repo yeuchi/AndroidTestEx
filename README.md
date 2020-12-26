@@ -17,7 +17,8 @@ SpyTest.kt
 SingletonTest.kt
 - mockObject: mock singleton, enum
 
-
+AnnotationTest.kt
+- use of annotation to declar variables
 
 # References
 
